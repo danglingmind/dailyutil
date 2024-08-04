@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Courier_Prime } from "next/font/google";
 import "./globals.css";
 import Menu from "./ui/menu";
-import Drawer from "./ui/drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 const courierPrime = Courier_Prime({
