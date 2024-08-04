@@ -44,11 +44,9 @@ export default function TextMaster() {
           {Array.from(generators.keys()).map((gen) => (
             <div
               key={gen}
-              className={
-                `badge ${
-                  generator === gen ? "badge-primary" : "badge-neutral"
-                }` + " p-3"
-              }
+              className={`badge ${
+                generator === gen ? "badge-primary" : "badge-neutral"
+              } m-2`}
               role="button"
               onClick={(e) => {
                 const generatorFunc = generators.get(gen);
@@ -84,9 +82,9 @@ export default function TextMaster() {
           <div
             key={trans}
             className={
-              `badge badge-lg ${
+              `badge ${
                 transformation === trans ? "badge-primary" : "badge-neutral"
-              }` + " m-2"
+              }` + " m-1"
             }
             role="button"
             onClick={(e) => setTransformation(trans)}

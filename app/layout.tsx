@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Courier_Prime } from "next/font/google";
 import "./globals.css";
 import Menu from "./ui/menu";
+import Drawer from "./ui/drawer";
 
 const inter = Inter({ subsets: ["latin"] });
 const courierPrime = Courier_Prime({
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={courierPrime.className}>
-        <div className="absolute flex flex-row w-full h-full top-0 left-0 m-0 p-0">
+        <div className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0">
           <Menu />
           <div className="w-full">{children}</div>
         </div>

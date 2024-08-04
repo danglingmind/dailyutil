@@ -44,32 +44,33 @@ export default function Menu() {
   };
 
   return (
-    <HotKeys keyMap={keyMap} handlers={handlers}>
-      <ul className="menu bg-base-200 rounded-box w-56 h-full flex gap-14 py-12">
-        {menuItems.map((item) => (
-          <li key={item.key}>
-            <Link
-              href={`/${item.key}`}
-              className={
-                `${selectedItem === item.key ? "active" : ""} ` +
-                "flex flex-col gap-2"
-              }
-              onClick={() => {
-                setSelectedItem(item.key);
-              }}
-            >
-              {item.name}
-              <div>
-                {item.shortCut?.map((s) => (
-                  <kbd key={s} className="kbd kbd-sm">
-                    {s}
-                  </kbd>
-                ))}
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </HotKeys>
+    // <HotKeys keyMap={keyMap} handlers={handlers}>
+    // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
+    <ul className="menu menu-horizontal bg-base-200 flex justify-center">
+      {menuItems.map((item) => (
+        <li key={item.key}>
+          <Link
+            href={`/${item.key}`}
+            className={
+              `${selectedItem === item.key ? "active" : ""} ` +
+              "flex flex-col gap-2 m-1"
+            }
+            onClick={() => {
+              setSelectedItem(item.key);
+            }}
+          >
+            {item.name}
+            {/* <div>
+              {item.shortCut?.map((s) => (
+                <kbd key={s} className="kbd kbd-sm">
+                  {s}
+                </kbd>
+              ))}
+            </div> */}
+          </Link>
+        </li>
+      ))}
+    </ul>
+    // </HotKeys>
   );
 }
