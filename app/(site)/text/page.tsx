@@ -2,6 +2,13 @@
 import { CircleX, Copy } from "lucide-react";
 import { useEffect, useState } from "react";
 import { LOREM_IPSUM } from "@/app/lib/constants/lorem-ipsum";
+import {
+  hash,
+  toCamelCase,
+  toKebabCase,
+  toPascalCase,
+  toSnakeCase,
+} from "string-transform";
 
 const transformations: Map<string, Function> = new Map<string, Function>([
   ["uppercase", (text: string) => text.toUpperCase()],
@@ -11,7 +18,9 @@ const transformations: Map<string, Function> = new Map<string, Function>([
     (text: string) =>
       text
         .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
         .join(" "),
   ],
   ["reverse", (text: string) => text.split("").reverse().join("")],
