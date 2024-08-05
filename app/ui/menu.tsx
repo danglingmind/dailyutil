@@ -5,19 +5,29 @@ import { HotKeys } from "react-hotkeys";
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   {
-    name: "Money Game",
-    key: "money",
+    name: "Currency Converter",
+    key: "moneyconverter",
     shortCut: ["ctrl", "shift", "1"],
   },
   {
-    name: "Time Travel",
-    key: "time",
+    name: "Time Converter",
+    key: "timeconverter",
     shortCut: ["ctrl", "shift", "2"],
   },
   {
-    name: "Text Master",
-    key: "text",
-    shortCut: ["ctrl", "shift", "2"],
+    name: "Text Converter",
+    key: "textconverter",
+    shortCut: ["ctrl", "shift", "3"],
+  },
+  {
+    name: "Random",
+    key: "random",
+    shortCut: ["ctrl", "shift", "4"],
+  },
+  {
+    name: "Diff",
+    key: "diff",
+    shortCut: ["ctrl", "shift", "5"],
   },
 ];
 
@@ -53,7 +63,7 @@ export default function Menu() {
             href={`/${item.key}`}
             className={
               `${selectedItem === item.key ? "active" : ""} ` +
-              "flex flex-col gap-2 m-1"
+              "flex flex-col gap-2 m-1 capitalize"
             }
             onClick={() => {
               setSelectedItem(item.key);

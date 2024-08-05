@@ -47,25 +47,23 @@ export default function TextMaster() {
 
   return (
     <div className="max-w-5xl p-20" style={{ margin: "0 auto" }}>
-      <div className="flex flex-row gap-2 items-center">
-        Text Generators :
-        <div className="flex flex-wrap m-1">
-          {Array.from(generators.keys()).map((gen) => (
-            <div
-              key={gen}
-              className={`badge ${
-                generator === gen ? "badge-primary" : "badge-neutral"
-              } m-2`}
-              role="button"
-              onClick={(e) => {
-                const generatorFunc = generators.get(gen);
-                generatorFunc && setInputText(generatorFunc(inputText));
-              }}
-            >
-              {gen}
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-row flex-wrap gap-2 items-center">
+        {"Text Generators"}
+        {Array.from(generators.keys()).map((gen) => (
+          <div
+            key={gen}
+            className={`badge ${
+              generator === gen ? "badge-primary" : "badge-neutral"
+            } m-2`}
+            role="button"
+            onClick={(e) => {
+              const generatorFunc = generators.get(gen);
+              generatorFunc && setInputText(generatorFunc(inputText));
+            }}
+          >
+            {gen}
+          </div>
+        ))}
       </div>
       <div className="font-bold text-xl m-1 w-full text-center">Input Text</div>
       <div className="flex flex-row justify-between items-start gap-2">
