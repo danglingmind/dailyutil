@@ -26,18 +26,20 @@ export default function Difference() {
   return (
     <div className="absolute w-full m-3">
       <div className="flex items-center justify-center gap-3 my-5">
-        <div
+        <button
           className="btn btn-primary btn-sm"
           onClick={(e) => setIsSubmit(true)}
+          disabled={isSubmit}
         >
           Submit
-        </div>
-        <div
+        </button>
+        <button
           className="btn btn-warning btn-sm"
           onClick={() => setIsSubmit(false)}
+          disabled={!isSubmit}
         >
           Reset
-        </div>
+        </button>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-3 my-5">
         {"Views: "}

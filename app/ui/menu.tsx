@@ -4,26 +4,26 @@ import { ReactNode, useEffect, useState } from "react";
 import { HotKeys } from "react-hotkeys";
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
-  {
-    name: "Currency Converter",
-    key: "moneyconverter",
-    shortCut: ["ctrl", "shift", "1"],
-  },
-  {
-    name: "Time Converter",
-    key: "timeconverter",
-    shortCut: ["ctrl", "shift", "2"],
-  },
+  // {
+  //   name: "Currency Converter",
+  //   key: "moneyconverter",
+  //   shortCut: ["ctrl", "shift", "1"],
+  // },
+  // {
+  //   name: "Time Converter",
+  //   key: "timeconverter",
+  //   shortCut: ["ctrl", "shift", "2"],
+  // },
   {
     name: "Text Converter",
     key: "textconverter",
     shortCut: ["ctrl", "shift", "3"],
   },
-  {
-    name: "Random",
-    key: "random",
-    shortCut: ["ctrl", "shift", "4"],
-  },
+  // {
+  //   name: "Random",
+  //   key: "random",
+  //   shortCut: ["ctrl", "shift", "4"],
+  // },
   {
     name: "Diff",
     key: "diff",
