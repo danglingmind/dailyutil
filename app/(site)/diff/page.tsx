@@ -1,7 +1,6 @@
 "use client";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
-import { useEffect, useState } from "react";
-import { parse } from "path";
+import { useState } from "react";
 
 const newStyles = {
   variables: {
@@ -12,10 +11,17 @@ const newStyles = {
   },
 };
 
+const views: string[] = ["split", "unified"];
+
 export default function Difference() {
   const [content1, setContent1] = useState("");
   const [content2, setContent2] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
+  const [view, setView] = useState(views?.at(0));
+
+  function isViewSet(v: string): boolean {
+    return view === v;
+  }
 
   return (
     <div className="absolute w-full m-3">
@@ -32,6 +38,20 @@ export default function Difference() {
         >
           Reset
         </div>
+      </div>
+      <div className="flex flex-wrap items-center justify-center gap-3 my-5">
+        {"Views: "}
+        {views?.map((item) => (
+          <div
+            key={item}
+            className={`badge cursor-pointer m-1 ${
+              view === item ? "badge-info" : "badge-neutral "
+            }`}
+            onClick={() => setView(item)}
+          >
+            {item}
+          </div>
+        ))}
       </div>
       {!isSubmit && (
         <div className="relative flex flex-row flex-grow gap-3 min-h-96">
@@ -55,11 +75,11 @@ export default function Difference() {
         </div>
       )}
       {isSubmit && (
-        <div className="m-5">
+        <div className="p-5">
           <ReactDiffViewer
             oldValue={content1}
             newValue={content2}
-            splitView={true}
+            splitView={isViewSet("split")}
             compareMethod={DiffMethod.WORDS}
             styles={newStyles}
             leftTitle="Version A"
