@@ -24,8 +24,8 @@ export default function Difference() {
   }
 
   return (
-    <div className="absolute w-full m-3">
-      <div className="flex items-center justify-center gap-3 my-5">
+    <div className="absolute w-full h-full p-5">
+      <div className="flex items-center justify-center gap-3 m-5">
         <button
           className="btn btn-primary btn-sm"
           onClick={(e) => setIsSubmit(true)}
