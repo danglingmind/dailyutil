@@ -5,7 +5,7 @@ import { courierPrime } from "./fonts";
 import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
-  title: "Daily Util",
+  title: "Convert Verse",
   description: "A conversion tool.",
 };
 
