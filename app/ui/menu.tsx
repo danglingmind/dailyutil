@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
 import { HotKeys } from "react-hotkeys";
 import { varelaRound } from "../fonts";
+import { Repeat } from "lucide-react";
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   // {
@@ -57,32 +58,41 @@ export default function Menu() {
   return (
     // <HotKeys keyMap={keyMap} handlers={handlers}>
     // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
-    <ul className="menu menu-horizontal bg-base-200 flex justify-center">
-      {menuItems.map((item) => (
-        <li key={item.key}>
-          <Link
-            href={`/${item.key}`}
-            className={
-              `${varelaRound.className} ` +
-              `${selectedItem === item.key ? "active" : ""} ` +
-              "flex flex-col gap-2 m-1 capitalize"
-            }
-            onClick={() => {
-              setSelectedItem(item.key);
-            }}
-          >
-            {item.name}
-            {/* <div>
+    <div className="flex-none">
+      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center">
+        <Link
+          href={"/"}
+          className="left-5 absolute"
+          onClick={() => setSelectedItem("")}
+        >
+          <Repeat className="w-8 h-8 m-0" />
+        </Link>
+        {menuItems.map((item) => (
+          <li key={item.key}>
+            <Link
+              href={`/${item.key}`}
+              className={
+                `${varelaRound.className} ` +
+                `${selectedItem === item.key ? "active" : ""} ` +
+                "flex flex-col gap-2 m-1 capitalize"
+              }
+              onClick={() => {
+                setSelectedItem(item.key);
+              }}
+            >
+              {item.name}
+              {/* <div>
               {item.shortCut?.map((s) => (
                 <kbd key={s} className="kbd kbd-sm">
                   {s}
                 </kbd>
               ))}
             </div> */}
-          </Link>
-        </li>
-      ))}
-    </ul>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
     // </HotKeys>
   );
 }

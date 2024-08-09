@@ -18,12 +18,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${courierPrime.className}`}>
         <div
-          className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto"
+          className="absolute flex flex-col justify-between w-full h-full top-0 left-0 m-0 p-0 overflow-auto"
           style={{ scrollbarWidth: "none" }}
         >
           <Menu />
           <div className="w-full">{children}</div>
-          <Footer />
+          <div className="flex items-end justify-end">
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

@@ -25,8 +25,8 @@ export default function Difference() {
   }
 
   return (
-    <div className="absolute w-full h-full p-5">
-      <div className="flex items-center justify-center gap-3 m-5">
+    <div className="w-full p-3">
+      <div className="flex items-center justify-center gap-3">
         <button
           className={`${varelaRound.className} ` + "btn btn-primary btn-sm"}
           onClick={(e) => setIsSubmit(true)}
@@ -62,20 +62,20 @@ export default function Difference() {
         ))}
       </div>
       {!isSubmit && (
-        <div className="relative flex flex-row flex-grow gap-3 min-h-96">
-          <div id="content-1" className="relative w-1/2 min-h-full">
+        <div className="flex flex-row gap-3 p-3">
+          <div className="w-1/2">
             <div className={`${inter.className} ` + "m-3"}>Content 1</div>
             <textarea
-              className="textarea textarea-bordered w-full min-h-full"
+              className="textarea textarea-bordered w-full box-border min-h-96"
               value={content1}
               onChange={(e) => setContent1(e.currentTarget.value)}
             />
           </div>
 
-          <div id="content-2" className="relative w-1/2 min-h-full">
+          <div className="w-1/2">
             <div className={`${inter.className} ` + "m-3"}>Content 2</div>
             <textarea
-              className="textarea textarea-bordered w-full min-h-full"
+              className="textarea textarea-bordered w-full box-border min-h-96"
               value={content2}
               onChange={(e) => setContent2(e.currentTarget.value)}
             />
@@ -83,7 +83,7 @@ export default function Difference() {
         </div>
       )}
       {isSubmit && (
-        <div className="p-5">
+        <div className="flex flex-row gap-3 p-3">
           <ReactDiffViewer
             oldValue={content1}
             newValue={content2}
@@ -92,6 +92,7 @@ export default function Difference() {
             styles={newStyles}
             leftTitle="Version A"
             rightTitle="Version B"
+            useDarkTheme={true}
             // renderContent={highlightSyntax}
           />
         </div>

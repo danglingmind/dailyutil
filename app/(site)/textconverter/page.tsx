@@ -48,7 +48,7 @@ export default function TextMaster() {
   }, [inputText, transformation]);
 
   return (
-    <div className="max-w-5xl p-20" style={{ margin: "0 auto" }}>
+    <div className="max-w-5xl p-20 grow" style={{ margin: "0 auto" }}>
       <div
         className={
           `${varelaRound.className} ` +
