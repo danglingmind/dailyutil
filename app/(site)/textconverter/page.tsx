@@ -1,7 +1,7 @@
 "use client";
 import { CircleX, Copy } from "lucide-react";
 import { useEffect, useState } from "react";
-import { LOREM_IPSUM } from "@/app/lib/constants/lorem-ipsum";
+import { FOX, LOREM_IPSUM } from "@/app/lib/constants/texts";
 import {
   hash,
   toCamelCase,
@@ -9,6 +9,7 @@ import {
   toPascalCase,
   toSnakeCase,
 } from "string-transform";
+import { courierPrime, varelaRound } from "@/app/fonts";
 
 const transformations: Map<string, Function> = new Map<string, Function>([
   ["uppercase", (text: string) => text.toUpperCase()],
@@ -32,7 +33,8 @@ const transformations: Map<string, Function> = new Map<string, Function>([
 ]);
 
 const generators: Map<string, Function> = new Map<string, Function>([
-  ["lorem-ipsum", (text: string) => LOREM_IPSUM],
+  ["lorem ipsum", () => LOREM_IPSUM],
+  ["brown fox", () => FOX],
 ]);
 
 export default function TextMaster() {
@@ -47,14 +49,22 @@ export default function TextMaster() {
 
   return (
     <div className="max-w-5xl p-20" style={{ margin: "0 auto" }}>
-      <div className="flex flex-row flex-wrap gap-2 items-center">
+      <div
+        className={
+          `${varelaRound.className} ` +
+          "flex flex-row flex-wrap gap-2 items-center"
+        }
+      >
         {"Text Generators"}
         {Array.from(generators.keys()).map((gen) => (
           <div
             key={gen}
-            className={`badge ${
-              generator === gen ? "badge-primary" : "badge-neutral"
-            } m-2`}
+            className={
+              `${courierPrime.className} ` +
+              `badge ${
+                generator === gen ? "badge-primary" : "badge-neutral"
+              } m-2 capitalize`
+            }
             role="button"
             onClick={(e) => {
               const generatorFunc = generators.get(gen);
@@ -65,7 +75,14 @@ export default function TextMaster() {
           </div>
         ))}
       </div>
-      <div className="font-bold text-xl m-1 w-full text-center">Input Text</div>
+      <div
+        className={
+          `${varelaRound.className} ` +
+          "font-bold text-xl m-1 w-full text-center"
+        }
+      >
+        Input Text
+      </div>
       <div className="flex flex-row justify-between items-start gap-2">
         <textarea
           className="textarea textarea-bordered w-full min-h-32"
@@ -78,10 +95,15 @@ export default function TextMaster() {
           role="button"
           onClick={() => setInputText("")}
         >
-          <CircleX className="w-4 h-4" />
+          <CircleX className="w-5 h-5 text-error" />
         </div>
       </div>
-      <div className="font-bold text-xl mt-4 w-full text-center">
+      <div
+        className={
+          `${varelaRound.className} ` +
+          "font-bold text-xl mt-8 w-full text-center"
+        }
+      >
         Transformed Text
       </div>
       <div className="flex flex-wrap m-3">
@@ -112,7 +134,7 @@ export default function TextMaster() {
           role="button"
           onClick={() => navigator.clipboard.writeText(transformedText)}
         >
-          <Copy className="w-4 h-4" />
+          <Copy className="w-5 h-5 text-info" />
         </div>
       </div>
     </div>

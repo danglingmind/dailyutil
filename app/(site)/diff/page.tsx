@@ -1,6 +1,7 @@
 "use client";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
 import { useState } from "react";
+import { inter, varelaRound } from "@/app/fonts";
 
 const newStyles = {
   variables: {
@@ -27,22 +28,27 @@ export default function Difference() {
     <div className="absolute w-full h-full p-5">
       <div className="flex items-center justify-center gap-3 m-5">
         <button
-          className="btn btn-primary btn-sm"
+          className={`${varelaRound.className} ` + "btn btn-primary btn-sm"}
           onClick={(e) => setIsSubmit(true)}
           disabled={isSubmit}
         >
           Submit
         </button>
         <button
-          className="btn btn-warning btn-sm"
+          className={`${varelaRound.className} ` + "btn btn-warning btn-sm"}
           onClick={() => setIsSubmit(false)}
           disabled={!isSubmit}
         >
           Reset
         </button>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-3 my-5">
-        {"Views: "}
+      <div
+        className={
+          `${inter.className} ` +
+          "flex flex-wrap items-center justify-center gap-3 my-5"
+        }
+      >
+        {"View"}
         {views?.map((item) => (
           <div
             key={item}
@@ -58,7 +64,7 @@ export default function Difference() {
       {!isSubmit && (
         <div className="relative flex flex-row flex-grow gap-3 min-h-96">
           <div id="content-1" className="relative w-1/2 min-h-full">
-            <div className="m-3">Content 1</div>
+            <div className={`${inter.className} ` + "m-3"}>Content 1</div>
             <textarea
               className="textarea textarea-bordered w-full min-h-full"
               value={content1}
@@ -67,7 +73,7 @@ export default function Difference() {
           </div>
 
           <div id="content-2" className="relative w-1/2 min-h-full">
-            <div className="m-3">Content 2</div>
+            <div className={`${inter.className} ` + "m-3"}>Content 2</div>
             <textarea
               className="textarea textarea-bordered w-full min-h-full"
               value={content2}

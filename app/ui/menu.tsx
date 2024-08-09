@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
 import { HotKeys } from "react-hotkeys";
+import { varelaRound } from "../fonts";
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   // {
@@ -62,6 +63,7 @@ export default function Menu() {
           <Link
             href={`/${item.key}`}
             className={
+              `${varelaRound.className} ` +
               `${selectedItem === item.key ? "active" : ""} ` +
               "flex flex-col gap-2 m-1 capitalize"
             }
