@@ -10,6 +10,8 @@ import {
   toSnakeCase,
 } from "string-transform";
 import { courierPrime, varelaRound } from "@/app/fonts";
+import Head from "next/head";
+import { TEXT_CONVERTER_DESCRIPTION } from "@/app/ui/seo/descriptions";
 
 const transformations: Map<string, Function> = new Map<string, Function>([
   ["uppercase", (text: string) => text.toUpperCase()],
@@ -49,6 +51,10 @@ export default function TextMaster() {
 
   return (
     <div className="max-w-5xl p-20 grow" style={{ margin: "0 auto" }}>
+      <Head>
+        <title>Text Converter</title>
+        <meta name="description" content={TEXT_CONVERTER_DESCRIPTION} />
+      </Head>
       <div
         className={
           `${varelaRound.className} ` +

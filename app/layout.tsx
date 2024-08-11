@@ -6,7 +6,10 @@ import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
   title: "Convert Verse",
-  description: "A conversion tool.",
+  description:
+    "A conversion tool that can convert text/sentence in different formats " +
+    "and cases and allows you to copy the converted text/sentences. You can generate some " +
+    "famous contents as well like lorem ipsum or A quick brown fox.",
 };
 
 export default function RootLayout({
@@ -24,9 +27,7 @@ export default function RootLayout({
           <div className="flex-none">
             <Menu />
           </div>
-          <div className="flex-grow flex items-start justify-start w-full">
-            {children}
-          </div>
+          <div className="flex-grow flex w-full">{children}</div>
           <div className="flex-none">
             <Footer />
           </div>

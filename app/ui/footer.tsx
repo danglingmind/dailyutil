@@ -1,11 +1,11 @@
-import { inter, teko } from "../fonts";
+import { cormorantGaramond, inter, teko } from "../fonts";
 
 export default function Footer() {
   return (
     <footer
       className={
-        `${inter.className} ` +
-        "w-full bg-base-content text-primary-content p-4 text-center"
+        `${cormorantGaramond.className} ` +
+        "w-full bg-base-content text-primary-content p-4 text-center mt-20"
       }
     >
       &copy; {new Date().getFullYear()} contertverse.in
