@@ -2,6 +2,8 @@
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
 import { useState } from "react";
 import { inter, varelaRound } from "@/app/fonts";
+import { DIFF_DESC } from "@/app/ui/seo/descriptions";
+import Head from "next/head";
 
 const newStyles = {
   variables: {
@@ -26,6 +28,10 @@ export default function Difference() {
 
   return (
     <div className="w-full p-3">
+      <Head>
+        <title>Difference</title>
+        <meta name="description" content={DIFF_DESC} />
+      </Head>
       <div className="flex items-center justify-center gap-3">
         <button
           className={`${varelaRound.className} ` + "btn btn-primary btn-sm"}
