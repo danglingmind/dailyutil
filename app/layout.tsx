@@ -3,6 +3,9 @@ import "./globals.css";
 import Menu from "./ui/menu";
 import { courierPrime } from "./fonts";
 import Footer from "./ui/footer";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-5K4GSL8LYW");
 
 export const metadata: Metadata = {
   title: "Convert Verse",

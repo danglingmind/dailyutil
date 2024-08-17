@@ -12,6 +12,7 @@ import {
 import { courierPrime, varelaRound } from "@/app/fonts";
 import Head from "next/head";
 import { TEXT_CONVERTER_DESCRIPTION } from "@/app/ui/seo/descriptions";
+import { GASend } from "@/app/lib/ga";
 
 const transformations: Map<string, Function> = new Map<string, Function>([
   ["uppercase", (text: string) => text.toUpperCase()],
@@ -40,6 +41,8 @@ const generators: Map<string, Function> = new Map<string, Function>([
 ]);
 
 export default function TextMaster() {
+  GASend("pageview", "textconverter");
+
   const [inputText, setInputText] = useState("");
   const [transformedText, setTransformedText] = useState("");
   const [transformation, setTransformation] = useState<string>("sentense");
