@@ -4,7 +4,7 @@ import { useState } from "react";
 import { inter, varelaRound } from "@/app/fonts";
 import { DIFF_DESC } from "@/app/ui/seo/descriptions";
 import Head from "next/head";
-import { GASend } from "@/app/lib/ga";
+// import { GASend } from "@/app/lib/ga";
 
 const newStyles = {
   variables: {
@@ -18,7 +18,7 @@ const newStyles = {
 const views: string[] = ["split", "unified"];
 
 export default function Difference() {
-  GASend("pageview", "diff");
+  //   GASend("pageview", "diff");
   const [content1, setContent1] = useState("");
   const [content2, setContent2] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
