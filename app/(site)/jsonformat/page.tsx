@@ -10,6 +10,9 @@ export default function JsonFormat() {
 
   return (
     <div className="flex flex-col gap-3 w-full p-5">
+      <div className="text-xl" style={{ margin: "0 auto" }}>
+        Enter JSON
+      </div>
       <div className="flex gap-3 w-full justify-center">
         <button
           className="btn btn-primary w-fit btn-sm"
@@ -32,6 +35,7 @@ export default function JsonFormat() {
           Edit
         </button>
       </div>
+
       {!submitted ? (
         <textarea
           className="textarea textarea-bordered w-1/2 p-2"
