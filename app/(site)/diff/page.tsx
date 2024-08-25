@@ -29,7 +29,7 @@ export default function Difference() {
   }
 
   return (
-    <div className="w-full p-3">
+    <div className="w-full p-3 h-lvh">
       <Head>
         <title>Difference</title>
         <meta name="description" content={DIFF_DESC} />

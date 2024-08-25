@@ -30,7 +30,7 @@ export default function RootLayout({
           <div className="flex-none">
             <Menu />
           </div>
-          <div className="flex-grow flex w-full">{children}</div>
+          <div className="flex-grow flex w-full mt-20">{children}</div>
           <div className="flex-none">
             <Footer />
           </div>

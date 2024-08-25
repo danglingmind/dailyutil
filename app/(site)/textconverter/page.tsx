@@ -53,7 +53,7 @@ export default function TextMaster() {
   }, [inputText, transformation]);
 
   return (
-    <div className="max-w-5xl p-20 grow" style={{ margin: "0 auto" }}>
+    <div className="max-w-5xl p-20 grow h-lvh" style={{ margin: "0 auto" }}>
       <Head>
         <title>Text Converter</title>
         <meta name="description" content={TEXT_CONVERTER_DESCRIPTION} />
