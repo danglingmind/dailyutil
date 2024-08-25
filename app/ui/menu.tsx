@@ -44,12 +44,6 @@ const menuItems: { name: string; key: string; shortCut: string[] }[] = [
 export default function Menu() {
   const [selectedItem, setSelectedItem] = useState("");
 
-  const keyMap = {
-    money: "ctrl+shift+1",
-    time: "ctrl+shift+2",
-    text: "ctrl+shift+3",
-  };
-
   const handlers = {
     money: () => {
       console.log("money");
@@ -62,8 +56,8 @@ export default function Menu() {
   return (
     // <HotKeys keyMap={keyMap} handlers={handlers}>
     // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
-    <div className="flex-none">
-      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center">
+    <div className="flex-none mt-3">
+      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center  rounded-full w-fit" style={{margin: "0 auto"}}>
         <Link
           href={"/"}
           className="left-5 absolute"
@@ -78,20 +72,13 @@ export default function Menu() {
               className={
                 `${varelaRound.className} ` +
                 `${selectedItem === item.key ? "active" : ""} ` +
-                "flex flex-col gap-2 m-1 capitalize"
+                "flex flex-col gap-2 m-1 capitalize rounded-full text-xs"
               }
               onClick={() => {
                 setSelectedItem(item.key);
               }}
             >
               {item.name}
-              {/* <div>
-              {item.shortCut?.map((s) => (
-                <kbd key={s} className="kbd kbd-sm">
-                  {s}
-                </kbd>
-              ))}
-            </div> */}
             </Link>
           </li>
         ))}
