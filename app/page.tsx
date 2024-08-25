@@ -6,7 +6,7 @@ export default function Home() {
       className="flex w-full min-h-screen flex-col items-center"
       style={{ marginTop: "-5rem" }}
     >
-      <div>
+      <div className="h-lvh w-full">
         <Spline scene="https://prod.spline.design/61ficUp7YUaVYv-y/scene.splinecode" />
       </div>
     </main>
