@@ -4,6 +4,9 @@ import { ReactNode, useEffect, useState } from "react";
 import { HotKeys } from "react-hotkeys";
 import { varelaRound } from "../fonts";
 import { Repeat } from "lucide-react";
+import Image from "next/image";
+import logoImage from "@/app/logo.png";
+
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   // {
@@ -41,10 +44,6 @@ const menuItems: { name: string; key: string; shortCut: string[] }[] = [
 export default function Menu() {
   const [selectedItem, setSelectedItem] = useState("");
 
-  useEffect(() => {
-    console.log(selectedItem);
-  }, [selectedItem]);
-
   const keyMap = {
     money: "ctrl+shift+1",
     time: "ctrl+shift+2",
@@ -70,7 +69,7 @@ export default function Menu() {
           className="left-5 absolute"
           onClick={() => setSelectedItem("")}
         >
-          <Repeat className="w-8 h-8 m-0" />
+          <Image src={logoImage} alt="logo" width={50} height={50} />
         </Link>
         {menuItems.map((item) => (
           <li key={item.key}>
