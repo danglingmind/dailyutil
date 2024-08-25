@@ -31,6 +31,11 @@ const menuItems: { name: string; key: string; shortCut: string[] }[] = [
     key: "diff",
     shortCut: ["ctrl", "shift", "5"],
   },
+  {
+    name: "JSON Format",
+    key: "jsonformat",
+    shortCut: ["ctrl", "shift", "6"],
+  },
 ];
 
 export default function Menu() {
