@@ -6,6 +6,7 @@ import { varelaRound } from "../fonts";
 import { Repeat } from "lucide-react";
 import Image from "next/image";
 import logoImage from "@/app/logo.png";
+import ThemeSwitch from "./themeswitch";
 
 
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
@@ -57,7 +58,7 @@ export default function Menu() {
     // <HotKeys keyMap={keyMap} handlers={handlers}>
     // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
     <div className="flex-none mt-3 fixed w-full">
-      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center  rounded-full w-fit" style={{margin: "0 auto"}}>
+      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center rounded-full w-fit" style={{margin: "0 auto"}}>
         <Link
           href={"/"}
           className="left-5 absolute"
@@ -65,6 +66,7 @@ export default function Menu() {
         >
           <Image src={logoImage} alt="logo" width={50} height={50} />
         </Link>
+
         {menuItems.map((item) => (
           <li key={item.key}>
             <Link
@@ -82,7 +84,9 @@ export default function Menu() {
             </Link>
           </li>
         ))}
+      <ThemeSwitch/>
       </ul>
+
     </div>
     // </HotKeys>
   );

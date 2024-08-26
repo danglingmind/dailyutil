@@ -27,9 +27,9 @@ export default function RootLayout({
           className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto"
           style={{ scrollbarWidth: "none" }}
         >
-          <div className="flex-none">
-            <Menu />
-          </div>
+          {/* <div className="flex-none"> */}
+          <Menu />
+          {/* </div> */}
           <div className="flex-grow flex w-full mt-20">{children}</div>
           <div className="flex-none">
             <Footer />
