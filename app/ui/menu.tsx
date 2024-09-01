@@ -8,7 +8,6 @@ import Image from "next/image";
 import logoImage from "@/app/logo.png";
 import ThemeSwitch from "./themeswitch";
 
-
 const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   // {
   //   name: "Currency Converter",
@@ -32,12 +31,12 @@ const menuItems: { name: string; key: string; shortCut: string[] }[] = [
   // },
   {
     name: "Diff",
-    key: "diff",
+    key: "codediff",
     shortCut: ["ctrl", "shift", "5"],
   },
   {
     name: "JSON Format",
-    key: "jsonformat",
+    key: "jsonformatter",
     shortCut: ["ctrl", "shift", "6"],
   },
 ];
@@ -58,7 +57,10 @@ export default function Menu() {
     // <HotKeys keyMap={keyMap} handlers={handlers}>
     // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
     <div className="flex-none mt-3 fixed w-full">
-      <ul className="menu menu-horizontal bg-base-200 flex justify-center items-center rounded-full w-fit" style={{margin: "0 auto"}}>
+      <ul
+        className="menu menu-horizontal bg-base-200 flex justify-center items-center rounded-full w-fit"
+        style={{ margin: "0 auto" }}
+      >
         <Link
           href={"/"}
           className="left-5 absolute"
@@ -84,9 +86,8 @@ export default function Menu() {
             </Link>
           </li>
         ))}
-      <ThemeSwitch/>
+        <ThemeSwitch />
       </ul>
-
     </div>
     // </HotKeys>
   );
