@@ -1,18 +1,28 @@
 import { cormorantGaramond, inter, teko } from "../fonts";
 
+const FooterContent = () => {
+  return (
+    <div className="w-full flex justify-between">
+      <span className="text-left">
+        &copy; {new Date().getFullYear()} contertverse.in
+      </span>
+      <div>
+        <span className="text-xl">Made with ☕</span> by{" "}
+        <span className={teko.className}>Prateek Reddy</span>
+      </div>
+    </div>
+  );
+};
+
 export default function Footer() {
   return (
     <footer
       className={
         `${cormorantGaramond.className} ` +
-        "w-full bg-base-content text-primary-content p-4 text-center mt-20"
+        "relative p-2 bg-base-content text-primary-content text-right"
       }
     >
-      &copy; {new Date().getFullYear()} contertverse.in
-      <div className="text-center m-1">
-        Made with <span className="text-xl">☕</span> by{" "}
-        <span className={teko.className}>Prateek Reddy</span>
-      </div>
+      <FooterContent />
     </footer>
   );
 }

@@ -12,6 +12,7 @@ import {
 import { courierPrime, varelaRound } from "@/app/fonts";
 import Head from "next/head";
 import { TEXT_CONVERTER_DESCRIPTION } from "@/app/ui/seo/descriptions";
+import Footer from "@/app/ui/footer";
 // import { GASend } from "@/app/lib/ga";
 
 const transformations: Map<string, Function> = new Map<string, Function>([

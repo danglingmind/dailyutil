@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/app/ui/footer";
 import { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 
@@ -9,7 +10,7 @@ export default function JsonFormat() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div className="flex flex-col gap-3 w-full p-5">
+    <div className="flex flex-col gap-3 w-full p-5 h-lvh">
       <div className="text-xl" style={{ margin: "0 auto" }}>
         Enter JSON
       </div>
@@ -41,7 +42,7 @@ export default function JsonFormat() {
           className="textarea textarea-bordered w-1/2 p-2"
           style={{
             margin: "0 auto",
-            minHeight: "70vh",
+            minHeight: "75vh",
             background: "#282A36",
             color: "#F8F8F2",
           }}

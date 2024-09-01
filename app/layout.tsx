@@ -24,16 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${courierPrime.className}`}>
         <div
-          className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto"
+          className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto bg-blue-300"
           style={{ scrollbarWidth: "none" }}
         >
-          {/* <div className="flex-none"> */}
           <Menu />
-          {/* </div> */}
-          <div className="flex-grow flex w-full mt-20">{children}</div>
-          <div className="flex-none">
-            <Footer />
+          <div className="flex-grow flex w-full mt-20 overflow-scroll h-lvh">
+            {children}
           </div>
+          <Footer />
         </div>
       </body>
       <GoogleAnalytics gaId="G-5K4GSL8LYW" />

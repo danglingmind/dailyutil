@@ -4,6 +4,7 @@ import { useState } from "react";
 import { inter, varelaRound } from "@/app/fonts";
 import { DIFF_DESC } from "@/app/ui/seo/descriptions";
 import Head from "next/head";
+import Footer from "@/app/ui/footer";
 // import { GASend } from "@/app/lib/ga";
 
 const newStyles = {
