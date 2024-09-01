@@ -6,3 +6,6 @@ export const TEXT_CONVERTER_DESCRIPTION =
 export const DIFF_DESC =
   "A simple git diff tool, which can be used to find the difference between two code samples,two contents, two texts " +
   "two json and other string, it has two views split and unified.";
+
+export const JSON_FORMATTER =
+  "A JSON formatter, which formats json documents or strings and make it easier to read and look pretty.";

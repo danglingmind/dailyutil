@@ -1,6 +1,8 @@
 "use client";
 
 import Footer from "@/app/ui/footer";
+import { JSON_FORMATTER } from "@/app/ui/seo/descriptions";
+import Head from "next/head";
 import { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 
@@ -11,6 +13,10 @@ export default function JsonFormat() {
 
   return (
     <div className="flex flex-col gap-3 w-full p-5 h-lvh">
+      <Head>
+        <title>Difference</title>
+        <meta name="description" content={JSON_FORMATTER} />
+      </Head>
       <div className="text-xl" style={{ margin: "0 auto" }}>
         Enter JSON
       </div>
