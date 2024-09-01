@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${courierPrime.className}`}>
         <div
-          className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto bg-blue-300"
+          className="absolute flex flex-col w-full h-full top-0 left-0 m-0 p-0 overflow-auto"
           style={{ scrollbarWidth: "none" }}
         >
           <Menu />
