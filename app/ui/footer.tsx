@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cormorantGaramond, inter, teko } from "../fonts";
 
 const FooterContent = () => {
@@ -8,7 +9,15 @@ const FooterContent = () => {
       </span>
       <div>
         <span className="text-xl">Made with ☕</span> by{" "}
-        <span className={teko.className}>Prateek Reddy</span>
+        <span className={teko.className}>
+          <Link
+            href={"https://www.linkedin.com/in/prateekreddy"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Prateek Reddy
+          </Link>
+        </span>
       </div>
     </div>
   );

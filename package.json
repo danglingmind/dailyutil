@@ -11,8 +11,10 @@
   "dependencies": {
     "@next/third-parties": "^14.2.5",
     "@splinetool/react-spline": "^4.0.0",
+    "js-beautify": "^1.14.3",
     "lucide-react": "^0.424.0",
     "next": "^14.2.5",
+    "prettier": "^3.3.3",
     "react": "^18",
     "react-code-blocks": "^0.1.6",
     "react-diff-viewer": "^3.1.1",
