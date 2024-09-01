@@ -56,9 +56,9 @@ export default function Menu() {
   return (
     // <HotKeys keyMap={keyMap} handlers={handlers}>
     // {/* <ul className="menu menu-horizontal bg-base-200 rounded-box w-56 h-full flex gap-14 py-12"> */}
-    <div className="flex-none mt-3 fixed w-full">
+    <div className="flex-none mt-3 fixed w-full bg-inherit z-30">
       <ul
-        className="menu menu-horizontal bg-base-200 flex justify-center items-center rounded-full w-fit"
+        className="menu menu-horizontal bg-base-content text-primary-content flex justify-center items-center rounded-full w-fit"
         style={{ margin: "0 auto" }}
       >
         <Link
