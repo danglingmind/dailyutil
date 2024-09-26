@@ -5,6 +5,7 @@ import { JSON_FORMATTER } from "@/app/ui/seo/descriptions";
 import Head from "next/head";
 import { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
+import ReactJson from "react-json-view";
 
 export default function JsonFormat() {
   const [inputText, setInputText] = useState("");
@@ -57,13 +58,10 @@ export default function JsonFormat() {
         />
       ) : (
         <div className="w-1/2" style={{ margin: "0 auto" }}>
-          <CopyBlock
-            wrapLongLines
-            text={formattedText}
-            language={"jsx"}
-            showLineNumbers={true}
-            theme={dracula}
-            codeBlock
+          <ReactJson
+            src={JSON.parse(formattedText)}
+            theme={"chalk"}
+            style={{ padding: "5px" }}
           />
         </div>
       )}
