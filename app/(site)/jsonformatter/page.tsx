@@ -5,7 +5,13 @@ import { JSON_FORMATTER } from "@/app/ui/seo/descriptions";
 import Head from "next/head";
 import { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
-import ReactJson from "react-json-view";
+import dynamic from "next/dynamic";
+
+// NOTE: This is to disable the server-side rendering for the components which do not support.
+//        To remove build time prerender error.
+const ReactJsonViewWithNoSSR = dynamic(() => import("react-json-view"), {
+  ssr: false,
+});
 
 export default function JsonFormat() {
   const [inputText, setInputText] = useState("");
@@ -58,10 +64,9 @@ export default function JsonFormat() {
         />
       ) : (
         <div className="w-1/2" style={{ margin: "0 auto" }}>
-          <ReactJson
+          <ReactJsonViewWithNoSSR
             src={JSON.parse(formattedText)}
             theme={"chalk"}
-            style={{ padding: "5px" }}
           />
         </div>
       )}
